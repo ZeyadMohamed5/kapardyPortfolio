@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #131313; /* Rich near-black with subtle blue undertone */
+  --color-surface: #18181b; /* Elegant dark gray for surfaces/cards */
+  --color-accent: #7c3aed; /* Vibrant violet-600 for a trendy pop */
+  --color-accent-hover: #9f67ff; /* Lighter electric violet for hover states */
+  --color-text: #f5f5f5; /* Soft white for better contrast */
+  --color-text-muted: #9ca3af; /* Cool muted gray for secondary text */
+  --color-border: #27272a; /* Softer, modern border tone */
+}
+
+@layer components {
+  .wrapper {
+    @apply w-[60%] mx-auto;
+  }
+}
+
+body {
+  font-family: "Epilogue", sans-serif;
+}
