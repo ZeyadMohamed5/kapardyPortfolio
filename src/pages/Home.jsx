@@ -4,7 +4,7 @@ const Home = () => {
       {/* Hero section */}
       <div className="wrapper">
         <section className="text-text  min-h-[89vh] grid grid-cols-12 items-center py-20">
-          <div className="md:col-span-5 space-y-4 col-span-12">
+          <div className="md:col-span-5 space-y-4 col-span-12 justify-items-center">
             <div className="w-60 h-60 aspect-square border-3 border-border">
               <img
                 className="w-full aspect-square object-cover"

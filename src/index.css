@@ -12,7 +12,7 @@
 
 @layer components {
   .wrapper {
-    @apply w-[60%] mx-auto;
+    @apply max-w-[90%]  md:w-[70%] mx-auto;
   }
 }
 
