@@ -1,9 +1,13 @@
+import SkillItems from "../components/SkillItems";
+import RenderList from "../shared/RenderList";
+import skillsData from "../data/skills.json";
+
 const Home = () => {
   return (
     <main className="bg-surface text-text">
       {/* Hero section */}
       <div className="wrapper">
-        <section className="text-text  min-h-[89vh] grid grid-cols-12 items-center py-20">
+        <section className="text-text  min-h-[89vh] grid grid-cols-12 items-center md:py-20  py-10">
           <div className="md:col-span-5 space-y-4 col-span-12 justify-items-center">
             <div className="w-60 h-60 aspect-square border-3 border-border">
               <img
@@ -49,6 +53,15 @@ const Home = () => {
             repellat id quaerat sit culpa minus, quod dolor odit nostrum placeat
             magnam aliquam perferendis iure dolorum quas itaque illo alias quae.
           </p>
+        </div>
+      </section>
+
+      <section className="min-h-[100vh] bg-background md:py-20  py-10 ">
+        <div className="wrapper border-t pt-10 border-accent">
+          <h2 className="text-3xl font-bold text-center">My Skills</h2>
+          <div className="grid grid-cols-12 justify-items-center mt-10 gap-6">
+            <RenderList data={skillsData} ItemComponent={SkillItems} />
+          </div>
         </div>
       </section>
     </main>
