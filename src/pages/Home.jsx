@@ -46,7 +46,7 @@ const Home = () => {
   });
 
   return (
-    <main className="bg-surface text-text">
+    <main className="bg-surface text-text overscroll-none">
       {/* Hero section */}
       <div className="wrapper">
         <motion.section
@@ -136,7 +136,7 @@ const Home = () => {
         </section>
         {/* Contact me form */}
         <section className="min-h-[100vh] bg-background md:py-20 py-10">
-          <div className="wrapper border-t pt-10 border-accent grid grid-cols-12 items-center md:space-x-20">
+          <div className="wrapper border-t pt-10 border-accent grid grid-cols-12 items-center md:gap-10">
             <div className="md:col-span-6 col-span-12 w-full">
               <h3 className="text-3xl font-bold">Lets work together</h3>
               <p className="mt-10 text-xl text-text-muted">
