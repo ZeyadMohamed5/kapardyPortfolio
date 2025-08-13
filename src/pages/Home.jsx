@@ -54,7 +54,7 @@ const Home = () => {
           style={{ opacity, filter, willChange: "opacity, filter" }}
           className="text-text min-h-[89vh] grid grid-cols-12 items-center md:py-20 py-10"
         >
-          <div className="md:col-span-5 space-y-4 col-span-12 justify-items-center place-items-center">
+          <div className="md:col-span-5 col-span-12 grid place-items-center space-y-4">
             <div className="w-60 h-60 aspect-square border-3 border-border relative">
               <img
                 className="w-full aspect-square object-cover"
@@ -119,7 +119,7 @@ const Home = () => {
         <section className="min-h-[100vh] bg-background md:py-20 py-10">
           <div className="wrapper border-t pt-10 border-accent">
             <h2 className="text-3xl font-bold text-center">My Skills</h2>
-            <div className="grid grid-cols-12 justify-items-center place-items-center mt-10 gap-6">
+            <div className="grid grid-cols-12  justify-items-center place-items-center mt-10 gap-6">
               <RenderList data={skillsData} ItemComponent={SkillItems} />
             </div>
           </div>
@@ -127,17 +127,28 @@ const Home = () => {
 
         {/* Latest Work */}
         <section className="min-h-[100vh] bg-background md:py-20 py-10">
-          <div className="wrapper border-t pt-10 border-accent">
+          <div className="wrapper border-t pt-10 border-accent ">
             <h2 className="text-3xl font-bold text-center">My Latest Work</h2>
             <div className="grid grid-cols-12 justify-items-center place-items-center mt-10 gap-6">
               <RenderList data={skillsData} ItemComponent={SkillItems} />
             </div>
           </div>
         </section>
-
         {/* Contact me form */}
         <section className="min-h-[100vh] bg-background md:py-20 py-10">
-          <ContactForm />
+          <div className="wrapper border-t pt-10 border-accent grid grid-cols-12 items-center md:space-x-20">
+            <div className="md:col-span-6 col-span-12 w-full">
+              <h3 className="text-3xl font-bold">Lets work together</h3>
+              <p className="mt-10 text-xl text-text-muted">
+                Let's turn ideas into visuals that stick. I blend strategy,
+                style, and storytelling to create work that inspires and
+                connects. If you're ready to make something unforgettable, let's
+                make it happen.
+              </p>
+            </div>
+
+            <ContactForm />
+          </div>
         </section>
       </motion.div>
     </main>

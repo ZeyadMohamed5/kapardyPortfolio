@@ -25,15 +25,7 @@ const ContactForm = () => {
     }
   };
   return (
-    <div className="wrapper border-t pt-10 border-accent grid grid-cols-12 items-center md:space-x-20">
-      <div className="md:col-span-6 col-span-12 w-full">
-        <h3 className="text-3xl font-bold">Lets work together</h3>
-        <p className="mt-10 text-xl text-text-muted">
-          Let's turn ideas into visuals that stick. I blend strategy, style, and
-          storytelling to create work that inspires and connects. If you're
-          ready to make something unforgettable, let's make it happen.
-        </p>
-      </div>
+     
       <form
         ref={formRef}
         onSubmit={onSubmit}
@@ -92,7 +84,6 @@ const ContactForm = () => {
           </p>
         )}
       </form>
-    </div>
   );
 };
 export default ContactForm;

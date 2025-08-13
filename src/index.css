@@ -22,6 +22,8 @@ html {
   font-family: "Epilogue", sans-serif;
   scrollbar-width: none;
   -ms-overflow-style: none;
+    overscroll-behavior: none; /* stops the bounce */
+
 }
 
 html::-webkit-scrollbar,
