@@ -37,7 +37,7 @@ const Home = () => {
     target: ref,
     offset: ["start end", "end end"],
   });
-  const rawY = useTransform(pageProgress, [0, 1], ["0%", "-35%"]);
+  const rawY = useTransform(pageProgress, [0, 1], ["0%", "-95%"]);
 
   const y = useSpring(rawY, {
     stiffness: 140,
