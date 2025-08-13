@@ -46,7 +46,7 @@ const Home = () => {
   });
 
   return (
-    <main className="bg-surface text-text overscroll-none">
+    <main className="bg-surface text-text overscroll-none max-h-screen">
       {/* Hero section */}
       <div className="wrapper">
         <motion.section
@@ -82,7 +82,7 @@ const Home = () => {
         ref={ref}
         style={{
           y,
-          position: "absolute",
+          position: "relative",
           left: 0,
           width: "100%",
           willChange: "transform",
