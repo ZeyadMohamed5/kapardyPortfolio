@@ -5,24 +5,54 @@ import { useEffect, useRef } from "react";
 import {
   motion,
   useMotionTemplate,
+  useMotionValueEvent,
   useScroll,
   useSpring,
   useTransform,
-  useMotionValueEvent,
 } from "motion/react";
 import ContactForm from "../components/ContactForm";
 
 const Home = () => {
-  const ref = useRef(null);
-  const heroRef = useRef(null);
+  // const ref = useRef(null);
+  // const heroRef = useRef(null);
+  // const { scrollYProgress: heroProgress } = useScroll({
+  //   target: heroRef,
+  //   offset: ["start start", "end start"],
+  // });
 
-  const { scrollYProgress: heroProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"],
+  // Opacity fade
+  // const rawOpacity = useTransform(heroProgress, [0, 1], [1, 0.25]);
+  // const opacity = useSpring(rawOpacity, {
+  //   stiffness: 80,
+  //   damping: 20,
+  //   mass: 0.6,
+  // });
+
+  // Blur filter
+  // const blurAmt = useTransform(heroProgress, [0, 0.7, 1], [0, 8, 12]);
+  // const filter = useMotionTemplate`blur(${blurAmt}px)`;
+
+  // const { scrollYProgress: pageProgress } = useScroll({
+  //   target: ref,
+  //   offset: ["start end", "end end"],
+  // });
+  // const rawY = useTransform(pageProgress, [0, 1], ["0%", "-95%"]);
+
+  // const y = useSpring(rawY, {
+  //   stiffness: 140,
+  //   damping: 30,
+  //   mass: 0.5,
+  // });
+
+  const container = useRef(null);
+
+  const { scrollYProgress: containerProgress } = useScroll({
+    target: container,
+    offset: ["start start", "end end"], // track until hero leaves top
   });
 
   // Opacity fade
-  const rawOpacity = useTransform(heroProgress, [0, 1], [1, 0.25]);
+  const rawOpacity = useTransform(containerProgress, [0, 0.2], [1, 0]);
   const opacity = useSpring(rawOpacity, {
     stiffness: 80,
     damping: 20,
@@ -30,29 +60,19 @@ const Home = () => {
   });
 
   // Blur filter
-  const blurAmt = useTransform(heroProgress, [0, 0.7, 1], [0, 8, 12]);
+  const blurAmt = useTransform(containerProgress, [0, 0.7, 0.2], [0, 8, 12]);
   const filter = useMotionTemplate`blur(${blurAmt}px)`;
 
-  const { scrollYProgress: pageProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end end"],
-  });
-  const rawY = useTransform(pageProgress, [0, 1], ["0%", "-95%"]);
-
-  const y = useSpring(rawY, {
-    stiffness: 140,
-    damping: 30,
-    mass: 0.5,
-  });
-
   return (
-    <main className="bg-surface text-text overscroll-none max-h-screen">
+    <main
+      ref={container}
+      className="bg-surface text-text relative overscroll-none h-[500vh]"
+    >
       {/* Hero section */}
-      <div className="wrapper">
+      <div className="wrapper sticky top-0">
         <motion.section
-          ref={heroRef}
-          style={{ opacity, filter, willChange: "opacity, filter" }}
-          className="text-text min-h-[89vh] grid grid-cols-12 items-center md:py-20 py-10"
+          className="text-text h-[100vh] grid grid-cols-12 items-center md:py-20 py-10"
+          style={{ filter, opacity, willChange: "filter , opacity" }}
         >
           <div className="md:col-span-5 col-span-12 grid place-items-center space-y-4">
             <div className="w-60 h-60 aspect-square border-3 border-border relative">
@@ -78,16 +98,7 @@ const Home = () => {
         </motion.section>
       </div>
 
-      <motion.div
-        ref={ref}
-        style={{
-          y,
-          position: "relative",
-          left: 0,
-          width: "100%",
-          willChange: "transform",
-        }}
-      >
+      <div className="z-30 relative" id="about">
         {/* About Section */}
         <section className="min-h-[100vh] bg-background py-20 relative">
           <div className="wrapper">
@@ -126,7 +137,10 @@ const Home = () => {
         </section>
 
         {/* Latest Work */}
-        <section className="min-h-[100vh] bg-background md:py-20 py-10">
+        <section
+          className="min-h-[100vh] bg-background md:py-20 py-10"
+          id="work"
+        >
           <div className="wrapper border-t pt-10 border-accent ">
             <h2 className="text-3xl font-bold text-center">My Latest Work</h2>
             <div className="grid grid-cols-12 justify-items-center place-items-center mt-10 gap-6">
@@ -135,7 +149,10 @@ const Home = () => {
           </div>
         </section>
         {/* Contact me form */}
-        <section className="min-h-[100vh] bg-background md:py-20 py-10">
+        <section
+          className="min-h-[100vh] bg-background md:py-20 py-10 "
+          id="contact"
+        >
           <div className="wrapper border-t pt-10 border-accent grid grid-cols-12 items-center md:gap-10">
             <div className="md:col-span-6 col-span-12 w-full">
               <h3 className="text-3xl font-bold">Lets work together</h3>
@@ -150,7 +167,7 @@ const Home = () => {
             <ContactForm />
           </div>
         </section>
-      </motion.div>
+      </div>
     </main>
   );
 };

@@ -10,13 +10,13 @@ const Header = () => {
 
         <ul className="flex gap-4 font-semibold items-center justify-between text-lg">
           <li>
-            <a href="">About</a>
+            <a href="#about">About</a>
           </li>
           <li>
-            <a href="">Work</a>
+            <a href="#work">Work</a>
           </li>
           <li>
-            <a href="">Contact</a>
+            <a href="#contact">Contact</a>
           </li>
         </ul>
       </div>
