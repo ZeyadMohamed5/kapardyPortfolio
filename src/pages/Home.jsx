@@ -60,7 +60,7 @@ const Home = () => {
   });
 
   // Blur filter
-  const blurAmt = useTransform(containerProgress, [0, 0.7, 0.2], [0, 8, 12]);
+  const blurAmt = useTransform(containerProgress, [0, 0.7, 0.14], [0, 8, 12]);
   const filter = useMotionTemplate`blur(${blurAmt}px)`;
 
   return (
@@ -69,7 +69,7 @@ const Home = () => {
       className="bg-surface text-text relative overscroll-none h-[500vh]"
     >
       {/* Hero section */}
-      <div className="wrapper sticky top-0">
+      <div className="wrapper sticky top-0 pt-10">
         <motion.section
           className="text-text h-[100vh] grid grid-cols-12 items-center md:py-20 py-10"
           style={{ filter, opacity, willChange: "filter , opacity" }}
@@ -162,6 +162,34 @@ const Home = () => {
                 connects. If you're ready to make something unforgettable, let's
                 make it happen.
               </p>
+              <ul className="flex items-center text-2xl gap-2 mt-5">
+                <li>
+                  <a
+                    className="inline-block hover:text-accent-hover hover:scale-125 duration-200"
+                    href=""
+                  >
+                    <i className="fa-brands fa-square-facebook"></i>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    className="inline-block hover:text-accent-hover hover:scale-125 duration-200"
+                    href=""
+                  >
+                    <i className="fa-brands fa-instagram"></i>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    className="inline-block hover:text-accent-hover hover:scale-125 duration-200"
+                    href=""
+                  >
+                    <i className="fa-brands fa-behance"></i>
+                  </a>
+                </li>
+              </ul>
             </div>
 
             <ContactForm />
