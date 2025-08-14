@@ -60,7 +60,7 @@ const Home = () => {
   });
 
   // Blur filter
-  const blurAmt = useTransform(containerProgress, [0, 0.7, 0.14], [0, 8, 12]);
+  const blurAmt = useTransform(containerProgress, [0, 0.7, 0.2], [0, 8, 12]);
   const filter = useMotionTemplate`blur(${blurAmt}px)`;
 
   return (
@@ -69,9 +69,9 @@ const Home = () => {
       className="bg-surface text-text relative overscroll-none h-[500vh]"
     >
       {/* Hero section */}
-      <div className="wrapper sticky top-0 pt-10">
+      <div className="wrapper sticky -top-5 pt-10">
         <motion.section
-          className="text-text h-[100vh] grid grid-cols-12 items-center md:py-20 py-10"
+          className="text-text h-[100dvh] grid grid-cols-12 items-center md:py-20 py-10"
           style={{ filter, opacity, willChange: "filter , opacity" }}
         >
           <div className="md:col-span-5 col-span-12 grid place-items-center space-y-4">
@@ -87,7 +87,7 @@ const Home = () => {
               Art Director & designer
             </p>
           </div>
-          <div className="md:col-span-7 col-span-12 mt-10">
+          <div className="md:col-span-7 col-span-12 mt-5">
             <span className="capitalize font-bold text-2xl">bio:</span>
             <p className="leading-8 text-md">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
