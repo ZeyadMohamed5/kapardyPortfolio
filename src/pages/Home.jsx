@@ -110,7 +110,7 @@ const Home = () => {
                   y: 0,
                 }}
                 transition={{
-                  duration: 0.5,
+                  duration: 0.8,
                 }}
                 className="text-5xl md:text-8xl text-background uppercase shadow"
               >
@@ -142,7 +142,7 @@ const Home = () => {
                   y: 0,
                 }}
                 transition={{
-                  duration: 0.5,
+                  duration: 0.8,
                 }}
                 className="text-5xl md:text-8xl text-background uppercase shadow"
               >
