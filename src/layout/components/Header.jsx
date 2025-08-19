@@ -6,7 +6,7 @@ const Header = () => {
           <h1>
             <img
               className="max-w-full max-h-full object-cover"
-              src="./assets/Qabardino.png"
+              src="./assets/Qabardino.webp"
               alt=""
             />
           </h1>

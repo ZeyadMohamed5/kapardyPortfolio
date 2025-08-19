@@ -93,7 +93,7 @@ const Home = () => {
             className="fixed md:fixed top-0 left-0 w-full md:w-1/2 h-1/2 md:h-screen z-110  overflow-hidden"
           >
             <img
-              src="assets/curtain1.JPG"
+              src="assets/curtain1.webp"
               alt="Left curtain"
               className="w-full h-full object-cover"
             />
@@ -125,7 +125,7 @@ const Home = () => {
             className="fixed md:fixed bottom-0 md:top-0 right-0 w-full md:w-1/2 h-1/2 md:h-screen z-110 overflow-hidden"
           >
             <img
-              src="assets/curtain2.JPG"
+              src="assets/curtain2.webp"
               alt="Right curtain"
               className="w-full h-full object-cover"
             />
@@ -154,11 +154,11 @@ const Home = () => {
       </div>
 
       {/* Hero section - sticky positioned */}
-      <div className="sticky top-15 z-10 h-[100vh]">
-        <div className="wrapper ">
+      <div className=" md:top-12 sticky -top-12 z-10 h-[120vh]">
+        <div className="wrapper">
           <motion.section
             ref={heroRef}
-            className="text-text grid grid-cols-12 items-center md:py-20 py-10 h-full"
+            className="text-text grid grid-cols-12 items-center md:py-20 py-0 h-full"
             style={{
               filter,
               opacity,
@@ -168,14 +168,14 @@ const Home = () => {
           >
             <div className="md:col-span-4 col-span-12 grid place-items-center space-y-4 self-start">
               <h2 className="capitalize font-bold text-2xl">mohamed kabardy</h2>
-              <p className="text-2xl capitalize font-light">
+              <p className="text-2xl capitalize font-light text-center">
                 Art Director & set designer
               </p>
             </div>
             <div className="md:col-span-4 col-span-12 grid place-items-center ">
               <img
                 className="w-full object-cover"
-                src="./assets/qabardinonew.png"
+                src="./assets/qabardinonew.webp"
                 alt="Qabardy-Photo"
               />
             </div>
