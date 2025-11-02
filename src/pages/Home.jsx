@@ -1,7 +1,7 @@
 import SkillItems from "../components/SkillItems";
 import RenderList from "../shared/RenderList";
 import skillsData from "../data/skills.json";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import {
   motion,
   useMotionTemplate,
@@ -230,14 +230,14 @@ const Home = () => {
         </section>
 
         {/* Skills */}
-        <section className="min-h-[100vh] bg-background md:py-20 py-10">
+        {/* <section className="min-h-[100vh] bg-background md:py-20 py-10">
           <div className="wrapper border-t pt-10 border-accent">
             <h2 className="text-3xl font-bold text-center">My Skills</h2>
             <div className="grid grid-cols-12 justify-items-center place-items-center mt-10 gap-6">
               <RenderList data={skillsData} ItemComponent={SkillItems} />
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Latest Work */}
         <section
